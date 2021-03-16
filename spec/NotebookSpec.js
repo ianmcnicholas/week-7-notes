@@ -1,7 +1,7 @@
 describe('Notebook', function() {
-  var notebook
-  describe('#create', function() {
+  let notebook
 
+  describe('#create', function() {
     it('adds a note to notes', function() {
       notebook = new Notebook
       notebook.create("test note 1");
@@ -9,7 +9,7 @@ describe('Notebook', function() {
     });
   });
 
-  describe('preview', function () {
+  describe('#previews', function () {
     it('shows first 20 characters of note', function() {
       notebook = new Notebook
       notebook.create("abc, abc, abc, abc, this should not appear");

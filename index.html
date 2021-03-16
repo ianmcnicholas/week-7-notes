@@ -3,15 +3,15 @@
   <head>
     <title>Notes</title>
     <script src="src/Notes.js"></script>
+    <script src="./interface.js"></script>
     <link rel="stylesheet" type="text/css" href="public/style.css">
   </head>
   <body>
     <button id="print">Print</Button>
       <div id="text"></div>
     <section>
-      <script>
+      <!-- <script>
       Greetings();
-
       function Greetings() {
         document
         .getElementById("print")
@@ -19,13 +19,18 @@
             print();
           });
       };
-
       function print() {
         document
         .getElementById("text")
           .innerHTML = "prints whatever";
       };
-      </script>
+      </script> -->
+<br>
+
+<textarea id="notefield" placeholder="Insert your new note here" rows="4" cols="50"></textarea><br>
+
+<button onclick="createNewNote()">Create Note</button>
+
     </section>
   </body>
 </html>

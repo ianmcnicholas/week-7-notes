@@ -1,27 +1,40 @@
 let notebook = new Notebook;
 let note;
+// This displayCount will be used later
 let displayCount = 0
 
+// This function grabs the text that the user put in the text field with the id of 'notefield'
+// It then uses that text to create a new note.
+// Finally it runs the displayNoteLinks function to show the new note with the others
 function createNewNote() {
   note = document.getElementById("notefield").value;
   notebook.create(note);
-  // insert function to display notes on the screen
   displayNoteLinks();
 };
 
+
+//This function grabs the last element of the notebook.previews array
+// It adds the info from this to the div1 element on the index page.
+//By doing this each time the 'create note' button is clicked, the list grows.
 function displayNoteLinks() {
   let lastElement = notebook.previews()[notebook.previews().length - 1]
   let divArray = [lastElement]
   divArray.forEach((preview) => {
     let a = document.createElement('a');
+    // a = <a></a>
     let node = document.createTextNode(preview);
+    // node = preview
     a.appendChild(node);
+    // a = <a>preview</a>
     a.href = `#${displayCount}`
+    // a = <a href="#0">preview</a> (assuming count is currenlty 0 - to match the index of the element)
     displayCount++
     let element = document.getElementById("div1");
     element.appendChild(a);
+    // The above adds 'a' to the div1 element on the index page
     let br = document.createElement('br');
     element.appendChild(br);
+    // The above creates a break element and adds that as well so it looks good
   })
 };
 

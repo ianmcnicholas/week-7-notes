@@ -9,31 +9,17 @@
   <body>
 <h1>Notebook</h1>
     <section>
-      <!-- <script>
-      Greetings();
-      function Greetings() {
-        document
-        .getElementById("print")
-        .addEventListener("click", function(clickEvent) {
-            print();
-          });
-      };
-      function print() {
-        document
-        .getElementById("text")
-          .innerHTML = "prints whatever";
-      };
-      </script> -->
+
 <br>
-
+<!-- This inserts a textfield onto the page, with an id of notefield -->
 <textarea id="notefield" placeholder="Insert your new note here" rows="4" cols="50"></textarea><br>
-
+<!-- This button, when clicked, runs a function called createNewNote in the interface.js file. -->
 <button onclick="createNewNote()">Create Note</button><br><br>
 
 <h2>Here are your notes:</h2><br>
-
+<!-- This div element has an id div1.  This is used in the interface.js file -->
 <div id="div1"></div>
-
+<!-- This div element has an id div2.  This will be used in the interface.js file -->
 <div id="div2"></div>
 
     </section>

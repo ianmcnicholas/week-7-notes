@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Frontend, single page app</title>
+  </head>
+
+  <body>
+    <a href="#tiger">Tiger</a>
+    <div id="animal"></div>
+
+    <script>
+      makeUrlChangeShowAnimalForCurrentPage();
+
+      function makeUrlChangeShowAnimalForCurrentPage() {
+        window.addEventListener("hashchange", showAnimalForCurrentPage);
+      };
+
+      function showAnimalForCurrentPage() {
+        showAnimal(getAnimalFromUrl(window.location));
+      };
+
+      function getAnimalFromUrl(location) {
+        return location.hash.split("#")[1];
+      };
+
+      function showAnimal(animal) {
+        document
+          .getElementById("animal")
+          .innerHTML = animal;
+      };
+    </script>
+  </body>
+</html>

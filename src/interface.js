@@ -25,7 +25,6 @@ function displayNoteLinks() {
   })
 };
 
-var notebook = new Notebook
 const emojify = (note) => {
   fetch('https://makers-emojify.herokuapp.com', {
     method: 'POST',

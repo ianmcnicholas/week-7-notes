@@ -10,22 +10,13 @@ function createNewNote() {
 
 
 
-fetch('https://makers-emojify.herokuapp.com', {
-  method: 'POST',
-  mode: 'cors',
-  headers: {
-    'Content-Type': 'Application/json'
-  },
-  body: '{"text": "Hello, :earth_africa:"}'
-}).then(response => response.json())
-.then(data => console.log(data));
-
-
-const emojify = () => {
+var notebook = new Notebook
+const emojify = (note) => {
   fetch('https://makers-emojify.herokuapp.com', {
     method: 'POST',
     mode: 'cors',
-    headers: { 'Conent-Type': 'Application/json' },
-    body: '{ "text":"Hello, earth_africa:" }'
-  }).then(response => response.json());
+    headers: { 'Content-Type': 'Application/json' },
+    body: `{ "text":"${note}" }`
+  }).then(response => response.json())
+  .then(data => notebook.create(data.emojified_text));
 }

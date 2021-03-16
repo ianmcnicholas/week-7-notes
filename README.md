@@ -25,3 +25,22 @@ As a programmer
 I can refresh the page and still see my notes
 So I can remember what I took down
 ```
+
+## Sequence Diagrams
+
+![creating-note](public/images/creating-note.png)
+
+
+```flow
+alias p = "Programmer"
+alias i = "Interface"
+alias nb = "Notebook"
+
+i->nb: "let notebook = new Notebook"
+nb->nb: "constructor() { this.notes = [] }"
+nb-->i: "notebook"
+p->i: "writes note, clicks create"
+i->nb: "create(note)"
+nb->nb: "this.notes.push(note)"
+
+```

@@ -10,12 +10,22 @@ function createNewNote() {
   displayNoteLinks();
 }
 
+console.log(notebook.previews())
+let displayCount = 0
+
 function displayNoteLinks() {
-  notebook.previews.forEach((preview, index) => {
+  let lastElement = notebook.previews()[notebook.previews().length - 1]
+  let divArray = [lastElement]
+  divArray.forEach((preview) => {
+    console.log(preview)
     let a = document.createElement('a');
+    // a = <a></a>
     let node = document.createTextNode(preview);
     a.appendChild(node);
-    a.href = `#${index}`
+    // a = <a>preview</a>
+    a.href = `#${displayCount}`
+    displayCount++
+    // a = <a href="#index">preview</a>
     let element = document.getElementById("div1");
     element.appendChild(a);
     let br = document.createElement('br');
@@ -24,8 +34,3 @@ function displayNoteLinks() {
 };
 
 //<a> title="Note to self" href=#search </a>
-
-
-
-
-

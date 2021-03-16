@@ -42,5 +42,14 @@ nb-->i: "notebook"
 p->i: "writes note, clicks create"
 i->nb: "create(note)"
 nb->nb: "this.notes.push(note)"
+```
 
+![api-request](public/images/api-request.png)
+
+
+```flow
+person->interface: "enter note"
+interface->API: "make request (text)"
+API-->interface: "emojified text"
+interface->notebook: "create(emojifiedText)"
 ```

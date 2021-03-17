@@ -9,8 +9,14 @@ let displayCount = 0
 function createNewNote() {
   note = document.getElementById("notefield").value;
   emojify(note);
-  displayNoteLinks();
+  setTimeout(() => {
+    note_index = notebook.notes.length - 1
+    note = notebook.notes[note_index]
+    localStorage.setItem(note_index, note)
+    displayNoteLinks();
+  }, 300) 
 };
+
 
 
 //This function grabs the last element of the notebook.previews array

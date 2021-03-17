@@ -10,12 +10,15 @@ function createNewNote() {
   note = document.getElementById("notefield").value;
   emojify(note);
   setTimeout(() => {
-    note_index = notebook.notes.length - 1
-    note = notebook.notes[note_index]
-    localStorage.setItem(note_index, note)
     displayNoteLinks();
-  }, 300) 
+  }, 300)
 };
+
+function storeNote() {
+  note_index = notebook.notes.length - 1
+  note = notebook.notes[note_index]
+  localStorage.setItem(note_index, note)
+}
 
 //This function grabs the last element of the notebook.previews array
 // It adds the info from this to the div1 element on the index page.

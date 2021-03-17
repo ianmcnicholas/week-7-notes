@@ -3,6 +3,8 @@ let note;
 // This displayCount will be used later
 let displayCount = 0
 
+getNotes();
+
 // This function grabs the text that the user put in the text field with the id of 'notefield'
 // It then uses that text to create a new note.
 // Finally it runs the displayNoteLinks function to show the new note with the others
@@ -18,6 +20,16 @@ function storeNote() {
   note_index = notebook.notes.length - 1
   note = notebook.notes[note_index]
   localStorage.setItem(note_index, note)
+}
+
+function getNotes() {
+  for (const [key, value] of Object.entries(localStorage)) {
+    notebook.create(value)
+  }
+}
+
+function displayOldNotes() {
+
 }
 
 //This function grabs the last element of the notebook.previews array

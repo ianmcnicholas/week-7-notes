@@ -8,60 +8,23 @@
   </head>
   <body>
 <h1>Notebook</h1>
-    <section>
-
 <br>
-<!-- This inserts a textfield onto the page, with an id of notefield -->
-<textarea id="notefield" placeholder="Insert your new note here" rows="4" cols="50"></textarea><br>
-<!-- This button, when clicked, runs a function called createNewNote in the interface.js file. -->
-<button onclick="createNewNote()">Create Note</button><br><br>
 
-<h2>Here are your notes:</h2><br>
-<!-- This div element has an id div1.  This is used in the interface.js file -->
-<div id="div1"></div>
-<!-- This div element has an id div2.  This will be used in the interface.js file -->
-<div id="div2"></div>
+    <section>
+      <!-- This div element has an id div2.  This will be used in the interface.js file -->
+      <div id="fullnote"></div>
+        <br>
+        <!-- This inserts a textfield onto the page, with an id of notefield -->
+          <textarea id="notefield" placeholder="Insert your new note here" rows="4" cols="50"></textarea><br>
+          <!-- This button, when clicked, runs a function called createNewNote in the interface.js file. -->
+            <button onclick="createNewNote()">Create Note</button><br><br>
 
+              <h2>Here are your notes:</h2><br>
+              <!-- This div element has an id div1.  This is used in the interface.js file -->
+                <div id="div1"></div>
+                  <script>
+                    showFullNote();
+                  </script>
     </section>
   </body>
 </html>
-
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Frontend, single page app</title>
-  </head>
-
-  <body>
-    <a href="#tiger">Tiger</a> |
-    <a href="#lion">Lion</a> |
-    <a href="#cheetah">Cheetah</a> |
-    <a href="#leopard">Leopard</a>
-
-    <div id="animal"></div>
-
-    <script>
-      makeUrlChangeShowAnimalForCurrentPage();
-
-      function makeUrlChangeShowAnimalForCurrentPage() {
-        window.addEventListener("hashchange", showAnimalForCurrentPage);
-      };
-
-      function showAnimalForCurrentPage() {
-        showAnimal(getAnimalFromUrl(window.location));
-      };
-
-      function getAnimalFromUrl(location) {
-        return location.hash.split("#")[1];
-      };
-
-      function showAnimal(animal) {
-        document
-          .getElementById("animal")
-          .innerHTML = animal;
-      };
-    </script>
-  </body>
-</html> -->

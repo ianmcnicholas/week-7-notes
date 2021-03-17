@@ -4,6 +4,7 @@ let note;
 let displayCount = 0
 
 getNotes();
+displayOldNotes();
 
 // This function grabs the text that the user put in the text field with the id of 'notefield'
 // It then uses that text to create a new note.
@@ -13,6 +14,7 @@ function createNewNote() {
   emojify(note);
   setTimeout(() => {
     displayNoteLinks();
+    storeNote();
   }, 300)
 };
 
@@ -29,7 +31,12 @@ function getNotes() {
 }
 
 function displayOldNotes() {
-
+  let html = "";
+  let div1 = document.getElementById("div1");
+  for (let i = 0; i < notebook.notes.length; i++) {
+    html += `<a href="#${i}">${notebook.notes[i]}</a><br>`;
+  }
+  div1.innerHTML = html;
 }
 
 //This function grabs the last element of the notebook.previews array

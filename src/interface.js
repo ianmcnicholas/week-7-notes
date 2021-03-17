@@ -10,6 +10,8 @@ function createNewNote() {
   note = document.getElementById("notefield").value;
   notebook.create(note);
   displayNoteLinks();
+  document.getElementById("notefield").value = ""
+  // added the above line to clear the text area once a note has been sumbitted
 };
 
 

@@ -72,21 +72,21 @@ const emojify = (note) => {
 
 
 
-  function showFullNote() {
-    window.addEventListener("hashchange", showNoteForCurrentPage);
-  };
+function showFullNote() {
+  window.addEventListener("hashchange", showNoteForCurrentPage);
+};
 
-  function showNoteForCurrentPage() {
-    showNote(getNoteUrl(window.location));
-  };
+function showNoteForCurrentPage() {
+  showNote(getNoteUrl(window.location));
+};
 
-  function getNoteUrl(location) {
-    return location.hash.split("#")[1];
-  };
+function getNoteUrl(location) {
+  return location.hash.split("#")[1];
+};
 
-  function showNote(index) {
-    console.log(index)
-    document
-      .getElementById("fullnote")
-      .innerHTML = notebook.notes[index];
-    };
+function showNote(index) {
+  console.log(index)
+  document
+    .getElementById("fullnote")
+    .innerHTML = notebook.notes[index];
+  };

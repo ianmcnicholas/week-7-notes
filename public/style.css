@@ -9,7 +9,14 @@
 }
 
 textarea {
-  background: #fffafa61;
+  background: #fffafa3d;
+  border-radius: 20px;
+  max-width: 600px;
+  height: 200px;
+}
+
+::placeholder {
+  color: #2b20209c;
 }
 
 * body {

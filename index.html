@@ -24,7 +24,11 @@
                 <div id="div1"></div>
                   <script>
                     showFullNote();
+                    // this function is what allows the notes to be displayed in full when clicked on the href link
                     history.replaceState(null, null, ' ');
+                    // history.replaceState(data, title, url) ->
+                    // the url bit get replaced by an empty string (it has to have a space there) whereas data and title do not change
+                    // the above removes the #index in the URL (note that this happens on refresh, but if executed in the conole, it doesnt refresh the page)
                   </script>
     </section>
   </body>

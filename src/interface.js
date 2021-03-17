@@ -8,7 +8,7 @@ let displayCount = 0
 // Finally it runs the displayNoteLinks function to show the new note with the others
 function createNewNote() {
   note = document.getElementById("notefield").value;
-  notebook.create(note);
+  emojify(note);
   displayNoteLinks();
 };
 

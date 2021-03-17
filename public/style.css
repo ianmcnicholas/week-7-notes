@@ -8,6 +8,10 @@
   font-size: 30px;
 }
 
+textarea {
+  background: #fffafa61;
+}
+
 * body {
   background: linear-gradient(to left, purple, orange);
 }

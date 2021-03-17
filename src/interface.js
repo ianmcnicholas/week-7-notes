@@ -17,8 +17,6 @@ function createNewNote() {
   }, 300) 
 };
 
-
-
 //This function grabs the last element of the notebook.previews array
 // It adds the info from this to the div1 element on the index page.
 //By doing this each time the 'create note' button is clicked, the list grows.

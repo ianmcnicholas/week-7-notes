@@ -16,6 +16,8 @@ function createNewNote() {
     displayNoteLinks();
     storeNote();
   }, 300)
+  document.getElementById("notefield").value = ""
+
 };
 
 function storeNote() {
@@ -95,3 +97,24 @@ const emojify = (note) => {
   // data.emojified_text gives us "Hello, 🌍"
   .then(data => notebook.create(data.emojified_text));
 }
+
+
+
+function showFullNote() {
+  window.addEventListener("hashchange", showNoteForCurrentPage);
+};
+
+function showNoteForCurrentPage() {
+  showNote(getNoteUrl(window.location));
+};
+
+function getNoteUrl(location) {
+  return location.hash.split("#")[1];
+};
+
+function showNote(index) {
+  console.log(index)
+  document
+    .getElementById("fullnote")
+    .innerHTML = notebook.notes[index];
+  };

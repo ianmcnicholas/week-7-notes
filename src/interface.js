@@ -3,17 +3,43 @@ let note;
 // This displayCount will be used later
 let displayCount = 0
 
+getNotes();
+displayOldNotes();
+
 // This function grabs the text that the user put in the text field with the id of 'notefield'
 // It then uses that text to create a new note.
 // Finally it runs the displayNoteLinks function to show the new note with the others
 function createNewNote() {
   note = document.getElementById("notefield").value;
-  notebook.create(note);
-  displayNoteLinks();
+  emojify(note);
+  setTimeout(() => {
+    displayNoteLinks();
+    storeNote();
+  }, 300)
   document.getElementById("notefield").value = ""
-  // added the above line to clear the text area once a note has been sumbitted
+
 };
 
+function storeNote() {
+  note_index = notebook.notes.length - 1
+  note = notebook.notes[note_index]
+  localStorage.setItem(note_index, note)
+}
+
+function getNotes() {
+  for (const [key, value] of Object.entries(localStorage)) {
+    notebook.create(value)
+  }
+}
+
+function displayOldNotes() {
+  let html = "";
+  let div1 = document.getElementById("div1");
+  for (let i = 0; i < notebook.notes.length; i++) {
+    html += `<a href="#${i}">${notebook.notes[i]}</a><br>`;
+  }
+  div1.innerHTML = html;
+}
 
 //This function grabs the last element of the notebook.previews array
 // It adds the info from this to the div1 element on the index page.

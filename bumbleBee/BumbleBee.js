@@ -24,9 +24,15 @@ function expect(a) {
         console.log(`expected ${a} to not equal ${b}`);
       } else {
         console.log('PASS');
-      } 
+      }
+    },
+    toInclude: function(b) {
+      if (a.includes(b)) {
+        console.log('PASS');
+      } else {
+        console.log('FAIL');
+        console.log(`expected ${a} to include ${b}`);
+      }
     }
   }
 }
-
-

@@ -1,6 +1,7 @@
 # Notes Web App
 
 ## User Stories
+
 ```
 As a programmer
 I can see a list of my notes, where each note is abbreviated to the first 20 characters
@@ -20,6 +21,7 @@ So I can record notes with fun little pictures
 ```
 
 ### Extra User Story
+
 ```
 As a programmer
 I can refresh the page and still see my notes
@@ -29,7 +31,6 @@ So I can remember what I took down
 ## Sequence Diagrams
 
 ![creating-note](public/images/creating-note.png)
-
 
 ```flow
 alias p = "Programmer"
@@ -45,7 +46,6 @@ nb->nb: "this.notes.push(note)"
 ```
 
 ![api-request](public/images/api-request.png)
-
 
 ```flow
 person->interface: "enter note"

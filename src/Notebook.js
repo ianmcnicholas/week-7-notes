@@ -1,3 +1,4 @@
+// understands how to store and retrieve notes
 class Notebook {
   constructor() {
     this.notes = [];
